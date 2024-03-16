@@ -1,0 +1,15 @@
+.usersPage {
+    display: flex;
+    flex-wrap: wrap;
+    .userItem {
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      text-align: center;
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+  

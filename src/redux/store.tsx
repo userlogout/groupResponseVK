@@ -1,9 +1,9 @@
-// src/app/store.ts
 import { configureStore } from '@reduxjs/toolkit';
+import usersReducer from '../features/users/userSlice';
 
 export const store = configureStore({
   reducer: {
-    // Здесь будут редьюсеры
+    users: usersReducer,
   },
 });
 
