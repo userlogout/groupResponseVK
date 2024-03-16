@@ -15,9 +15,16 @@
   height: 196px;
   position: relative;
   transition: border 0.3s;
-}
-.userItem:hover {
-  border: 2px solid orange; /* Оранжевая рамка при наведении */
+  &:hover {
+    border: 2px solid orange;
+  }
+  .deleteIcon {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
 }
 
 .userImage {
@@ -36,14 +43,6 @@
 
 .userEmail {
   color: #aaaaaa;
-}
-
-.deleteIcon {
-  display: none;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
 }
 
 .userItem:hover .deleteIcon {

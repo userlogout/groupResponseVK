@@ -1,15 +1,51 @@
-// .dashboard {
-//   display: flex;
-//   flex-direction: row;
-// }
 .dashboard {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, auto);
+  gap: 16px;
+}
+.usersPage {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Три колонки для карточек */
+  gap: 16px;
+
+  @media (max-width: 768px) {
+    /* Правило для экранов меньше 768px */
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Две колонки для карточек на мобильных */
+  }
+
+  @media (max-width: 480px) {
+    /* Правило для экранов меньше 480px */
+    grid-template-columns: 1fr; /* Одна колонка для карточек на самых маленьких экранах */
+  }
 }
 
-// .toolbar {
-//   display: flex;
-//   gap: 10px;
-//   padding: 20px; /* Отступ сверху для тулбара */
-// }
+.statsSidebar {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  grid-row: 1 / -1;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr; // одна колонка для всего, сайдбар будет под контентом
+  }
+
+  .statsSidebar {
+    width: 100%; // на мобильных устройствах сайдбар на весь экран
+    height: auto;
+    position: static; // убираем sticky для мобильных устройств
+  }
+
+  .controls {
+    order: -1; // элементы управления будут наверху
+  }
+}
