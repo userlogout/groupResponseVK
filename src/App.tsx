@@ -1,13 +1,10 @@
 import "./App.css";
-import UsersPage from "../src/components/UsersPage/UsersPage";
+import DashboardPage from "./pages/DashboardPage";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
-      <main>
-        <UsersPage />
-      </main>
+      <DashboardPage />
     </div>
   );
 }

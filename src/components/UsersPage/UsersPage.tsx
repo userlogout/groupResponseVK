@@ -41,10 +41,6 @@ const UsersPage: React.FC = () => {
               width="55"
               height="55"
             />
-            <div className={styles.userDetails}>
-              <div className={styles.userName}>{user.name}</div>
-              <div className={styles.userEmail}>{user.email}</div>
-            </div>
             <div
               className={styles.deleteIcon}
               onClick={() => handleRemoveUser(user.id)}
@@ -57,8 +53,8 @@ const UsersPage: React.FC = () => {
             >
               <img src={trashIcon} alt="Delete" />
             </div>
-            {/* <div className={styles.userName}>{user.name}</div>
-            <div className={styles.userEmail}>{user.email}</div> */}
+            <div className={styles.userName}>{user.name}</div>
+            <div className={styles.userEmail}>{user.email}</div>
             <div className={styles.userPhone}>{`Phone No: ${user.phone}`}</div>
             <div className={styles.userBirthday}>{`Birthday: ${formatDate(
               user.dob

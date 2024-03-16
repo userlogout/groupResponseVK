@@ -14,6 +14,10 @@
   width: 332px;
   height: 196px;
   position: relative;
+  transition: border 0.3s;
+}
+.userItem:hover {
+  border: 2px solid orange; /* Оранжевая рамка при наведении */
 }
 
 .userImage {
