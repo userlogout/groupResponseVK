@@ -65,7 +65,6 @@ const usersSlice = createSlice({
   },
 });
 
-// Экспортируем экшн криэйторы для удаления пользователя
 export const { removeUser } = usersSlice.actions;
 
 export default usersSlice.reducer;

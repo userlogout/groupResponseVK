@@ -22,10 +22,10 @@ const DashboardPage: React.FC = () => {
 
   return (
     <div className={styles.dashboard}>
-      <div className={styles.toolbar}>
-        <button onClick={handleRefresh}>Обновить</button>
-        <input type="text" placeholder="Поиск..." />
-      </div>
+      {/* <div className={styles.toolbar}> */}
+      {/* <button onClick={handleRefresh}>Обновить</button>
+        <input type="text" placeholder="Поиск..." /> */}
+      {/* </div> */}
       <UsersPage />
       {/* @ts-ignore */}
       <StatsSidebar users={users} />
