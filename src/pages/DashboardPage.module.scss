@@ -1,22 +1,28 @@
 .dashboard {
   display: grid;
-
-  grid-template-columns: 1fr 332px;
-  gap: 16px;
+  grid-template-columns: auto minmax(auto, 332px);
+  gap: 10px;
 }
 
 .usersPage {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(332px, 1fr)
+  ); /* Карточки будут заполнять доступное пространство */
   gap: 16px;
 }
 
 .statsSidebar {
-  // top: 0; /* Прилипание к верху */
-  height: calc(100vh - 20px);
-  overflow-y: auto;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+  // width: 332px;
 }
-
 @media (max-width: 768px) {
   .dashboard {
     grid-template-columns: 1fr;

@@ -2,7 +2,8 @@
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 10px 10px 10px 0;
   text-align: center;
-  background-color: #1e1e1e;
+
+  /* background-color: #1e1e1e; */
 }

@@ -2,8 +2,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  padding: 10px 10px 10px 10px;
 }
 
+@media (max-width: 768px) {
+  .usersPage {
+    padding: 0;
+  }
+}
 .userItem {
   display: flex;
   align-items: center;
@@ -11,7 +17,8 @@
   background-color: #2c2c2c;
   border-radius: 16px;
   padding: 20px;
-  width: 332px;
+  max-width: 332px;
+  width: 100%;
   height: 196px;
   position: relative;
   transition: border 0.3s;
