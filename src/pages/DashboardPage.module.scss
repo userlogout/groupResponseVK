@@ -1,19 +1,8 @@
-// .dashboard {
-//   display: grid;
-//   grid-template-columns: 1fr minmax(332px, 1fr);
-//   gap: 10px;
-// }
-
-// .usersPage {
-//   display: grid;
-//   grid-gap: 16px;
-//   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-// }
-
 .dashboard {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(332px, 1fr)) auto;
+  grid-template-columns: repeat(auto-fill, minmax(332px, 1fr)) 332px;
   gap: 16px;
+  align-items: start;
 }
 
 .usersPage {
@@ -30,14 +19,24 @@
   position: sticky;
   top: 20px;
   height: fit-content;
+  width: 332px;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .statsSidebar {
+    position: static;
+    width: 100%;
+    order: -1;
+  }
 }
 
 @media (min-width: 1200px) {
   .usersPage {
-    grid-template-columns: repeat(
-      4,
-      minmax(332px, 1fr)
-    ); /* Не более 4 карточек в ряд */
+    grid-template-columns: repeat(4, minmax(332px, 1fr));
   }
 }
 
@@ -46,18 +45,9 @@
     grid-template-columns: repeat(3, minmax(332px, 1fr));
   }
 }
-// .statsSidebar {
-//   background-color: #333;
-//   color: #fff;
-//   padding: 20px;
-//   border-radius: 16px;
-//   position: sticky;
-//   top: 20px;
-//   height: fit-content;
-// }
+
 @media (max-width: 768px) {
   .dashboard {
-    justify-content: center;
     grid-template-columns: 1fr;
   }
 
@@ -66,6 +56,8 @@
   }
 
   .statsSidebar {
-    width: 100%;
+    width: 100%; /* Сайдбар на всю ширину экрана */
+    position: static; /* Сайдбар перестаёт быть sticky */
+    order: -1; /* Сайдбар идёт перед карточками */
   }
 }
