@@ -1,6 +1,6 @@
 .dashboard {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(332px, 1fr)) 332px;
+  grid-template-columns: repeat(auto-fit, minmax(332px, 1fr)) 332px;
   gap: 16px;
   align-items: start;
 }
@@ -22,42 +22,42 @@
   width: 332px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1440px) {
   .dashboard {
-    grid-template-columns: 1fr;
-  }
-
-  .statsSidebar {
-    position: static;
-    width: 100%;
-    order: -1;
+    /* Ограничиваем максимальное количество колонок карточек до 3, плюс колонка для сайдбара */
+    grid-template-columns: repeat(3, 1fr) 332px;
+    justify-content: center; /* Центрируем всё содержимое грида */
   }
 }
 
-@media (min-width: 1200px) {
-  .usersPage {
-    grid-template-columns: repeat(4, minmax(332px, 1fr));
-  }
-}
+// @media (min-width: 1440px) {
+//   .usersPage {
+//     grid-template-columns: repeat(3, 1fr); /* Три колонки для карточек */
+//     max-width: calc(332px * 3); /* Максимальная ширина 3 колонок */
+//   }
+// }
 
-@media (min-width: 992px) and (max-width: 1199px) {
-  .usersPage {
-    grid-template-columns: repeat(3, minmax(332px, 1fr));
+@media (max-width: 1439px) {
+  .dashboard {
+    grid-template-columns: repeat(auto-fit, minmax(332px, 1fr));
   }
 }
 
 @media (max-width: 768px) {
   .dashboard {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Одна колонка для всего на мобильных */
+    justify-content: center; /* Центрирование грида */
   }
 
   .usersPage {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Две колонки для карточек */
+    max-width: calc(332px * 2); /* Максимальная ширина 2 колонок */
+    justify-content: center; /* Центрирование карточек внутри грида */
   }
 
   .statsSidebar {
+    order: -1; /* Сайдбар идёт перед карточками */
     width: 100%; /* Сайдбар на всю ширину экрана */
     position: static; /* Сайдбар перестаёт быть sticky */
-    order: -1; /* Сайдбар идёт перед карточками */
   }
 }
