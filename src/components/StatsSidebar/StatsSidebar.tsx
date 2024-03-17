@@ -82,7 +82,7 @@ const StatsSidebar: React.FC<Props> = ({ users }) => {
   const { ageGroups, genderGroups } = calculateStats(users);
 
   return (
-    <aside className={styles.statsSidebar}>
+    <div className={styles.statsSidebar}>
       <h2>{`${users.length} Users`}</h2>
       <section>
         <h3>Age Groups</h3>
@@ -96,7 +96,7 @@ const StatsSidebar: React.FC<Props> = ({ users }) => {
           <p key={key}>{`${key}: ${value} users`}</p>
         ))}
       </section>
-    </aside>
+    </div>
   );
 };
 

@@ -1,13 +1,11 @@
 .dashboard {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(332px, 1fr)) 332px;
+  grid-template-columns: repeat(3, 1fr) 332px;
   gap: 16px;
-  align-items: start;
 }
 
 .usersPage {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(332px, 1fr));
   gap: 16px;
 }
 
@@ -19,45 +17,50 @@
   position: sticky;
   top: 20px;
   height: fit-content;
-  width: 332px;
+  width: 300px; /* Задаем фиксированную ширину */
+  grid-column: 4; /* Занимать четвертую колонку */
 }
 
 @media (min-width: 1440px) {
-  .dashboard {
-    /* Ограничиваем максимальное количество колонок карточек до 3, плюс колонка для сайдбара */
-    grid-template-columns: repeat(3, 1fr) 332px;
-    justify-content: center; /* Центрируем всё содержимое грида */
+  .usersPage {
+    grid-template-columns: repeat(
+      3,
+      minmax(332px, 1fr)
+    ); /* Три колонки при ширине экрана 1440px */
   }
 }
 
-// @media (min-width: 1440px) {
-//   .usersPage {
-//     grid-template-columns: repeat(3, 1fr); /* Три колонки для карточек */
-//     max-width: calc(332px * 3); /* Максимальная ширина 3 колонок */
-//   }
-// }
+@media (min-width: 1200px) {
+  .usersPage {
+    grid-template-columns: repeat(
+      4,
+      minmax(332px, 1fr)
+    ); /* Четыре колонки для карточек */
+  }
+}
 
-@media (max-width: 1439px) {
-  .dashboard {
-    grid-template-columns: repeat(auto-fit, minmax(332px, 1fr));
+@media (min-width: 992px) and (max-width: 1199px) {
+  .usersPage {
+    grid-template-columns: repeat(
+      3,
+      minmax(332px, 1fr)
+    ); /* Три колонки для карточек */
   }
 }
 
 @media (max-width: 768px) {
   .dashboard {
     grid-template-columns: 1fr; /* Одна колонка для всего на мобильных */
-    justify-content: center; /* Центрирование грида */
+    justify-content: normal; /* Сброс центрирования для одной колонки */
   }
 
   .usersPage {
     grid-template-columns: repeat(2, 1fr); /* Две колонки для карточек */
-    max-width: calc(332px * 2); /* Максимальная ширина 2 колонок */
-    justify-content: center; /* Центрирование карточек внутри грида */
   }
 
   .statsSidebar {
-    order: -1; /* Сайдбар идёт перед карточками */
     width: 100%; /* Сайдбар на всю ширину экрана */
     position: static; /* Сайдбар перестаёт быть sticky */
+    order: -1; /* Сайдбар идёт перед карточками */
   }
 }
