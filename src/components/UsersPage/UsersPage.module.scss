@@ -1,15 +1,10 @@
 .usersPage {
-  display: flex;
-  flex-wrap: wrap;
+  flex: 1 0 auto;
+  display: grid;
+  grid: auto / repeat(auto-fit, minmax(332px, 1fr));
   gap: 16px;
-  padding: 10px 10px 10px 10px;
 }
 
-// @media (max-width: 768px) {
-//   .usersPage {
-//     padding: 0;
-//   }
-// }
 .userItem {
   display: flex;
   align-items: center;
@@ -17,7 +12,7 @@
   background-color: #2c2c2c;
   border-radius: 16px;
   padding: 20px;
-  max-width: 332px;
+  // max-width: 332px;
   width: 100%;
   height: 196px;
   position: relative;
@@ -32,6 +27,24 @@
     right: 10px;
     cursor: pointer;
   }
+}
+
+.faceName {
+  display: flex;
+  text-align: justify;
+}
+
+.unionDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.commonDiv {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  text-align: left;
 }
 
 .userImage {
