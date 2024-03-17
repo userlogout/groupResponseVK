@@ -16,9 +16,9 @@ const DashboardPage: React.FC = () => {
     }
   }, [status, dispatch]);
 
-  const handleRefresh = () => {
-    dispatch(fetchUsers());
-  };
+  // const handleRefresh = () => {
+  //   dispatch(fetchUsers());
+  // };
 
   return (
     <div className={styles.dashboard}>
