@@ -25,7 +25,7 @@
   position: relative;
   transition: border 0.3s;
   &:hover {
-    border: 2px solid orange;
+    border: 0.9px solid #cf7b5a;
   }
   .deleteIcon {
     display: none;
@@ -47,13 +47,6 @@
   justify-content: space-around;
 }
 
-.commonDiv {
-  display: flex;
-  flex-direction: column;
-  margin-top: 16px;
-  text-align: left;
-}
-
 .userImage {
   border-radius: 50%;
   margin-right: 16px;
@@ -70,6 +63,17 @@
   line-height: 24px;
 }
 
+.userItem:hover .userName {
+  color: #cf7b5a;
+}
+
+.commonDiv {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  text-align: left;
+}
+
 .userPhone,
 .userBirthday,
 .userAddress {
@@ -80,11 +84,18 @@
   line-height: 20px;
 }
 
-.phoneNumber,
 .birthdayDate,
 .addressDetails {
   margin-left: 15px;
   text-align: left;
+  color: #dcd8d3;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.phoneNumber {
+  margin-left: 10px;
   color: #dcd8d3;
   font-weight: 500;
   font-size: 14px;

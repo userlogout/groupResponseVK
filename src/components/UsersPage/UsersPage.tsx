@@ -57,17 +57,17 @@ const UsersPage: React.FC = () => {
             </div>
             <div className={styles.commonDiv}>
               <div className={styles.userPhone}>
-                Phone No{" "}
+                <span>Phone No</span>
                 <span className={styles.phoneNumber}>{user.phone}</span>
               </div>
               <div className={styles.userBirthday}>
-                Birthday{" "}
+                <span>Birthday</span>
                 <span className={styles.birthdayDate}>
                   {formatDate(user.dob)}
                 </span>
               </div>
               <div className={styles.userAddress}>
-                Address{" "}
+                <span>Address</span>
                 <span className={styles.addressDetails}>{user.address}</span>
               </div>
             </div>
