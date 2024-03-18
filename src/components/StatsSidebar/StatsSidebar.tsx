@@ -83,13 +83,15 @@ const StatsSidebar: React.FC<Props> = ({ users }) => {
 
   return (
     <div className={styles.statsSidebar}>
-      <h2>{`${users.length} Users`}</h2>
+      <h2 className={styles.styleh2}>{`${users.length} Users`}</h2>
+      <div className={styles.line}></div>
       <section>
-        <h3>Age Groups</h3>
+        <h3 className={styles.styleh3}>Age Groups</h3>
         {Object.entries(ageGroups).map(([key, value]) => (
           <p key={key}>{`${key}: ${value} users`}</p>
         ))}
       </section>
+      <div className={styles.line}></div>
       <section>
         <h3>Gender Groups</h3>
         {Object.entries(genderGroups).map(([key, value]) => (
