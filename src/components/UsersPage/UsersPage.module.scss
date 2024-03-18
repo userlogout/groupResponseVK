@@ -16,7 +16,6 @@
 
 .userItem {
   display: flex;
-  align-items: center;
   flex-direction: column;
   background-color: #1a1c23;
   border-radius: 16px;
@@ -51,7 +50,7 @@
 .commonDiv {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
+  margin-top: 16px;
   text-align: left;
 }
 
@@ -69,6 +68,27 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
+}
+
+.userPhone,
+.userBirthday,
+.userAddress {
+  align-items: baseline;
+  color: #8c8988;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.phoneNumber,
+.birthdayDate,
+.addressDetails {
+  margin-left: 15px;
+  text-align: left;
+  color: #dcd8d3;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .userEmail {

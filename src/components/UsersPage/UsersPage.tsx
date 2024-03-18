@@ -50,21 +50,26 @@ const UsersPage: React.FC = () => {
             <div
               className={styles.deleteIcon}
               onClick={() => handleRemoveUser(user.id)}
-              onMouseEnter={() => {}}
-              onMouseLeave={() => {}}
+              // onMouseEnter={() => {}}
+              // onMouseLeave={() => {}}
             >
               <img src={trashIcon} alt="Delete" />
             </div>
             <div className={styles.commonDiv}>
-              <div
-                className={styles.userPhone}
-              >{`Phone No: ${user.phone}`}</div>
-              <div className={styles.userBirthday}>{`Birthday: ${formatDate(
-                user.dob
-              )}`}</div>
-              <div
-                className={styles.userAddress}
-              >{`Address: ${user.address}`}</div>
+              <div className={styles.userPhone}>
+                Phone No{" "}
+                <span className={styles.phoneNumber}>{user.phone}</span>
+              </div>
+              <div className={styles.userBirthday}>
+                Birthday{" "}
+                <span className={styles.birthdayDate}>
+                  {formatDate(user.dob)}
+                </span>
+              </div>
+              <div className={styles.userAddress}>
+                Address{" "}
+                <span className={styles.addressDetails}>{user.address}</span>
+              </div>
             </div>
           </div>
         ))}
