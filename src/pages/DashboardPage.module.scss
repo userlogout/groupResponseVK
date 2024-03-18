@@ -2,3 +2,21 @@
   display: flex;
   gap: 16px;
 }
+
+.forButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonstart {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.buttonSearch {
+  display: flex;
+  justify-content: flex-start;
+}
+.buttonRefresh {
+  display: flex;
+}

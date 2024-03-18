@@ -16,16 +16,26 @@ const DashboardPage: React.FC = () => {
     }
   }, [status, dispatch]);
 
-  // const handleRefresh = () => {
-  //   dispatch(fetchUsers());
-  // };
+  const handleRefresh = () => {
+    dispatch(fetchUsers());
+  };
 
   return (
-    <div className={styles.dashboard}>
-      <UsersPage />
-      {/* @ts-ignore */}
-      <StatsSidebar users={users} />
-    </div>
+    <>
+      <div className={styles.forButtons}>
+        <div className={styles.buttonSearch}>
+          <button onClick={handleRefresh}>Поиск</button>
+        </div>
+        <div className={styles.buttonRefresh}>
+          <button onClick={handleRefresh}>refresh</button>
+        </div>
+      </div>
+      <div className={styles.dashboard}>
+        <UsersPage />
+        {/* @ts-ignore */}
+        <StatsSidebar users={users} />
+      </div>
+    </>
   );
 };
 
