@@ -27,13 +27,13 @@
   &:hover {
     border: 0.9px solid #cf7b5a;
   }
-  .deleteIcon {
-    display: none;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-  }
+  // .deleteIcon {
+  //   display: none;
+  //   position: absolute;
+  //   top: 10px;
+  //   right: 10px;
+  //   cursor: pointer;
+  // }
 }
 
 .faceName {
@@ -109,6 +109,28 @@
   line-height: 20px;
 }
 
-.userItem:hover .deleteIcon {
+.deleteIcon {
+  display: none;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-left: 0.9px solid #ff2c47;
+  border-bottom: 0.9px solid #ff2c47;
+  border-radius: 0 16px 0 16px;
+  padding: 10px;
+}
+
+.deleteIcon img {
   display: block;
+  width: 100%;
+  height: auto;
+}
+
+.userItem:hover .deleteIcon {
+  display: flex;
 }
