@@ -25,7 +25,12 @@ const DashboardPage: React.FC = () => {
       <div className={styles.forButtons}>
         <div className={styles.buttonSearch}>
           {/* <button onClick={handleRefresh}>Поиск</button> */}
-          <input type="text" id="search" name="search" required />
+          <input
+            type="text"
+            id="search"
+            name="search"
+            className={styles.searchButton}
+          />
         </div>
         <div className={styles.buttonRefresh}>
           <button onClick={handleRefresh}>refresh</button>

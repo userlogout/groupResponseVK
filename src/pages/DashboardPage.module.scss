@@ -1,12 +1,22 @@
 .dashboard {
   display: flex;
   gap: 16px;
-  margin-top: 10px;
+  // margin-top: 10px;
 }
 
 .forButtons {
   display: flex;
   justify-content: space-between;
+  margin-top: 32px;
+}
+.searchButton {
+  background-color: #1a1c23;
+  border: none;
+  padding: 0 8px 0 8px;
+  border-radius: 16px;
+  width: 332px;
+  height: 52px;
+  box-sizing: border-box;
 }
 
 .buttonstart {

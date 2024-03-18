@@ -39,8 +39,8 @@ const UsersPage: React.FC = () => {
                 src={user.picture}
                 alt={`${user.name}'s avatar`}
                 className={styles.userImage}
-                width="55"
-                height="55"
+                width="56"
+                height="56"
               />
               <div className={styles.unionDiv}>
                 <div className={styles.userName}>{user.name}</div>
