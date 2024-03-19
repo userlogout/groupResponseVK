@@ -9,6 +9,7 @@
   justify-content: space-between;
   margin-top: 32px;
 }
+
 .searchButton {
   background-color: #1a1c23;
   border: none;
@@ -17,6 +18,7 @@
   width: 332px;
   height: 52px;
   box-sizing: border-box;
+  color: white;
 }
 
 .buttonstart {
@@ -51,4 +53,18 @@
   align-self: flex-start;
   height: 96vh;
   overflow-y: auto;
+}
+
+.refreshText {
+  color: #cf7b5a;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: end;
+  margin-right: 15px;
+
+  &:hover {
+    text-decoration: underline; // Подчеркивание при наведении
+  }
 }

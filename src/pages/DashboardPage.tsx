@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import { fetchUsers } from "../features/users/userSlice";
 import UsersPage from "../components/UsersPage/UsersPage";
@@ -9,6 +9,7 @@ const DashboardPage: React.FC = () => {
   const dispatch = useAppDispatch();
   const users = useAppSelector((state) => state.users.users);
   const status = useAppSelector((state) => state.users.status);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     if (status === "idle") {
@@ -20,6 +21,18 @@ const DashboardPage: React.FC = () => {
     dispatch(fetchUsers());
   };
 
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
+
+  // Фильтрация пользователей по запросу
+  const filteredUsers = users.filter((user) => {
+    return (
+      user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      user.phone.includes(searchQuery)
+    );
+  });
+
   return (
     <>
       <div className={styles.forButtons}>
@@ -28,15 +41,21 @@ const DashboardPage: React.FC = () => {
             type="text"
             id="search"
             name="search"
+            placeholder="Search"
+            value={searchQuery}
+            onChange={handleSearchChange}
             className={styles.searchButton}
           />
         </div>
         <div className={styles.buttonRefresh}>
-          <button onClick={handleRefresh}>refresh</button>
+          <span onClick={handleRefresh} className={styles.refreshText}>
+            Refresh
+          </span>
         </div>
       </div>
       <div className={styles.dashboard}>
-        <UsersPage />
+        {/* @ts-ignore */}
+        <UsersPage users={filteredUsers} />
         <div className={styles.stickyContainer}>
           {/* Обертка для сайдбара */}
           {/* @ts-ignore */}
