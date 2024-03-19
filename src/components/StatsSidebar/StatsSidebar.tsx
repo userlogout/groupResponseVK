@@ -85,17 +85,23 @@ const StatsSidebar: React.FC<Props> = ({ users }) => {
     <div className={styles.statsSidebar}>
       <h2 className={styles.styleh2}>{`${users.length} Users`}</h2>
       <div className={styles.line}></div>
-      <section>
-        <h3 className={styles.styleh3}>Age Groups</h3>
-        {Object.entries(ageGroups).map(([key, value]) => (
-          <p key={key}>{`${key}: ${value} users`}</p>
+      <section className={styles.statsSection}>
+        <h3 className={styles.statsTitle}>Age Groups</h3>
+        {Object.entries(ageGroups).map(([label, value]) => (
+          <div key={label} className={styles.statsGroup}>
+            <div className={styles.statsGroupLabel}>{label}</div>
+            <div className={styles.statsGroupValue}>{value} users</div>
+          </div>
         ))}
       </section>
       <div className={styles.line}></div>
       <section>
-        <h3>Gender Groups</h3>
-        {Object.entries(genderGroups).map(([key, value]) => (
-          <p key={key}>{`${key}: ${value} users`}</p>
+        <h3 className={styles.statsTitle}>Gender Groups</h3>
+        {Object.entries(genderGroups).map(([label, value]) => (
+          <div key={label} className={styles.statsGroup}>
+            <div className={styles.statsGroupLabel}>{label}</div>
+            <div className={styles.statsGroupValue}>{value} users</div>
+          </div>
         ))}
       </section>
     </div>
