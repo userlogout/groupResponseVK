@@ -12,7 +12,7 @@ interface Props {
 
 const UsersPage: React.FC<Props> = ({ users: propsUsers }) => {
   const dispatch = useAppDispatch();
-  const globalUsers = useAppSelector((state) => state.users.users); //  получаем пользователей из состояния Redux
+  const globalUsers = useAppSelector((state) => state.users.users);
   const status = useAppSelector((state) => state.users.status);
   const error = useAppSelector((state) => state.users.error);
   const users = propsUsers || globalUsers;
@@ -67,7 +67,7 @@ const UsersPage: React.FC<Props> = ({ users: propsUsers }) => {
               <div className={styles.userBirthday}>
                 <span>Birthday</span>
                 <span className={styles.birthdayDate}>
-                  {formatDate(user.dob)}
+                  {formatDate(user.dob.date)}
                 </span>
               </div>
               <div className={styles.userAddress}>

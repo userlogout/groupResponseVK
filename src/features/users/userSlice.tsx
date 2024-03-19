@@ -12,13 +12,13 @@ const initialState: UsersState = {
 export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
   const response = await axios.get("https://randomuser.me/api/?results=20");
 
-  // console.log(JSON.stringify(response.data));
+  console.log(JSON.stringify(response.data));
   return response.data.results.map((user: any) => ({
     id: user.login.uuid,
     name: `${user.name.first} ${user.name.last}`,
     email: user.email,
     phone: user.phone,
-    dob: user.dob.date,
+    dob: { date: user.dob.date, age: user.dob.age },
     address: `${user.location.street.name} ${user.location.street.number}, ${user.location.city}, ${user.location.state}, ${user.location.country}`,
     picture: user.picture.large,
     gender: user.gender,

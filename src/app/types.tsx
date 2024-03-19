@@ -3,7 +3,7 @@ export interface User {
   name: string;
   email: string;
   phone: string;
-  dob: string;
+  dob: { date: string; age: number };
   address: string;
   picture: string;
   gender?: "male" | "female";

@@ -9,6 +9,7 @@ interface User {
   phone: string;
   dob: {
     date: string;
+    age: number;
   };
   address: string;
   picture: string;
