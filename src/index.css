@@ -5,7 +5,7 @@ body {
   min-width: 100vw;
   min-height: 100vh;
   background-color: #12141b;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 * {
