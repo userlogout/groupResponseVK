@@ -4,18 +4,24 @@ import { fetchUsers } from "../../features/users/userSlice";
 import styles from "./UsersPage.module.scss";
 import { removeUser } from "../../features/users/userSlice";
 import trashIcon from "../../assets/icons/trash.svg";
+import { User } from "../../app/types";
 
-const UsersPage: React.FC = () => {
+interface Props {
+  users?: User[];
+}
+
+const UsersPage: React.FC<Props> = ({ users: propsUsers }) => {
   const dispatch = useAppDispatch();
-  const users = useAppSelector((state) => state.users.users);
+  const globalUsers = useAppSelector((state) => state.users.users); //  получаем пользователей из состояния Redux
   const status = useAppSelector((state) => state.users.status);
   const error = useAppSelector((state) => state.users.error);
+  const users = propsUsers || globalUsers;
 
   useEffect(() => {
-    if (status === "idle") {
+    if (!propsUsers && status === "idle") {
       dispatch(fetchUsers());
     }
-  }, [status, dispatch]);
+  }, [status, dispatch, propsUsers]);
 
   const handleRemoveUser = (id: string) => {
     dispatch(removeUser(id));

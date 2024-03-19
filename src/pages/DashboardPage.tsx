@@ -54,7 +54,6 @@ const DashboardPage: React.FC = () => {
         </div>
       </div>
       <div className={styles.dashboard}>
-        {/* @ts-ignore */}
         <UsersPage users={filteredUsers} />
         <div className={styles.stickyContainer}>
           {/* Обертка для сайдбара */}
