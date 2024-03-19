@@ -50,8 +50,6 @@ const UsersPage: React.FC = () => {
             <div
               className={styles.deleteIcon}
               onClick={() => handleRemoveUser(user.id)}
-              // onMouseEnter={() => {}}
-              // onMouseLeave={() => {}}
             >
               <img src={trashIcon} alt="Delete" />
             </div>

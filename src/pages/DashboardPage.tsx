@@ -24,7 +24,6 @@ const DashboardPage: React.FC = () => {
     <>
       <div className={styles.forButtons}>
         <div className={styles.buttonSearch}>
-          {/* <button onClick={handleRefresh}>Поиск</button> */}
           <input
             type="text"
             id="search"
@@ -38,8 +37,11 @@ const DashboardPage: React.FC = () => {
       </div>
       <div className={styles.dashboard}>
         <UsersPage />
-        {/* @ts-ignore */}
-        <StatsSidebar users={users} />
+        <div className={styles.stickyContainer}>
+          {/* Обертка для сайдбара */}
+          {/* @ts-ignore */}
+          <StatsSidebar users={users} />
+        </div>
       </div>
     </>
   );
