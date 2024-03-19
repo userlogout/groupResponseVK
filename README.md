@@ -12,20 +12,27 @@ npm i
 npm run dev
 ```
 
+## Посмотреть билд:
+
+- https://userstatistic.vercel.app/
+
 ## Какой стек:
 
 - Rtk
 - TypeScript
 - Axious
 - Scss
+- сборщик Vite с базовой конфигурацией
 
 ## Что есть:
 
 - Поиск по ФИО
 - Подгрузка юзеров из апи
 
-## Чего нет:
+### Чего нет:
 
 - Адаптивной верстки для всех всех экранов, втч для мп
 
 ![Итог](/src/assets/temp.jpg)
+
+- https://userstatistic.vercel.app/
