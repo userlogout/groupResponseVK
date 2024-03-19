@@ -1,7 +1,6 @@
 .dashboard {
   display: flex;
   gap: 16px;
-  // margin-top: 10px;
 }
 
 .forButtons {
@@ -13,12 +12,13 @@
 .searchButton {
   background-color: #1a1c23;
   border: none;
-  padding: 0 8px 0 8px;
-  border-radius: 16px;
-  width: 332px;
+  padding: 0 8px 0 14px;
+  border-radius: 18px;
+  max-width: 332px;
   height: 52px;
   box-sizing: border-box;
-  color: white;
+  color: #8c8988;
+  margin-left: 5px;
 }
 
 .buttonstart {
@@ -32,15 +32,6 @@
   grid: auto (auto-fit, minmax(332px, 1fr));
   gap: 16px;
 }
-
-// .searchButton {
-//   flex: 1 0 auto;
-//   display: grid;
-//   grid-template-columns: repeat(auto-fill, minmax(332px, 1fr));
-//   gap: 16px;
-//   margin-top: 32px;
-//   width: auto;
-// }
 
 .buttonRefresh {
   display: flex;
@@ -65,6 +56,6 @@
   margin-right: 15px;
 
   &:hover {
-    text-decoration: underline; // Подчеркивание при наведении
+    text-decoration: underline;
   }
 }
