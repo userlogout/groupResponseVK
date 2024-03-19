@@ -10,7 +10,7 @@ const initialState: UsersState = {
 
 // Асинхронный экшен для загрузки пользователей
 export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
-  const response = await axios.get("https://randomuser.me/api/?results=20");
+  const response = await axios.get("https://randomuser.me/api/?results=40");
 
   console.log(JSON.stringify(response.data));
   return response.data.results.map((user: any) => ({
